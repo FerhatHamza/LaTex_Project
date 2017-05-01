@@ -1,0 +1,413 @@
+\chapter{Serveurs et base de données}
+
+\minitoc
+\section{Introduction :}
+\paragraph{} 
+nous allons donner dans ce chapitre un aperçu d'une part sur le langage de programmation qui variera en fonction de la technologie retenue et d'autre part sur les systèmes de gestion de bases de données.
+\paragraph{}
+parmi les langages étudiés dans ce chapitre il ya des langages que nous avons utilisés pour réussir le développement de notre site web qui est basé sur la conception d'une Virtual academy .
+\section{l'évolution des technologies de contenu dynamique:}
+\subsection{introduction:}
+\paragraph{}
+les requêtes web les plus simples consistent à demander des documents HTML(à partir d'un navigateur).dans ce cas,le serveur web recherche le fichier approprié et le revoie,si le document HTML contient des images,le navigateur émet en parallèle de requêtes pour les récupérer.ainsi on peut voire toutes ces requêtes portant sur des fichiers statiques donc:
+\begin{itemize}
+	\item le serveur web doit juste localiser le fichier correspondant au document demandé, et répond au navigateur en lui envoyant le contenu de ce fichier.
+\end{itemize} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm,height=10 cm]{./imag/6.png}
+	\caption{Traitement d'une requêtes web les plus simples}
+\end{figure}
+\paragraph{}
+de nos jours cependant,une grande partie de données délivrées sur le web est par essence dynamique.par exemple,dans notre projet, les utilisateurs(membres)peuvent modifier leurs comptes et éditer leurs vidéos qui sont classées par catégorie.
+\begin{itemize}
+	\item par conséquent,la création du contenu dynamique exige du serveur web qu'il effectue un certain traitement supplémentaire,pour générer une réponse personnalisée.
+\end{itemize}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm,height=10 cm]{./imag/7.png}
+	\caption{Traitement d'une page dynamique}
+\end{figure}
+\subsection{les langages de Script:}
+\subsubsection{définition:}
+\paragraph{}
+les scripts permettant globalement de contrôler la manière dont les différents objets cohabitent ou peuvent cohabiter dans un page,ou plus exactement la façon de gérer l'affichage dans un navigateur.
+\paragraph{}
+un script peut nous aider à déterminer ce que l'utilisateur peut ou non envisager de faire dans la page que vous lui proposez.
+\subsubsection{Pourquoi on utilise un langage de script ?}
+\paragraph{}
+pour éviter que le documente réalisé n'offre aucune possibilité d'interaction avec l'utilisateur en dehors des liens, les scripts on permit de développer des sites interactifs.mais ce sont les langages de script qui donnent habituellement leur cohérence aux différents éléments d'une page web.
+\subsubsection{la balise de script:}
+\paragraph{la balise HTML:} 
+\begin{lstlisting}[language=html]
+	<script></script>	
+\end{lstlisting}
+ représente le moyen de connexion principale de tout langage script au HTML.
+\paragraph{}
+l'élément peut prendre le attributs:
+\begin{itemize}
+	\item \textbf{language:} qui précise le langage de script utilisé.
+	\item \textbf{type:} type de script.
+	\item \textbf{src:}précisent le chemin à un fichier externe.
+\end{itemize}
+\paragraph{}
+cette balise peut être placée dans l'entête \textbf{Head}
+\begin{lstlisting}[language=html]
+<html>
+	<head>
+		<title></title>
+		<script src="fichier.js" type="text/javascript"></script>	
+	</head>	
+	<body>	
+		...	
+	</body>	
+</html>
+\end{lstlisting}
+ ou dans le corps \textbf{body}
+ \begin{lstlisting}[language=html]
+ <html>
+	 <head>
+		 <title></title>	
+	 </head>	
+	 <body>	
+		 <script src="fichier.js" type="text/javascript"></script>	
+	 </body>	
+ </html>
+ \end{lstlisting}
+
+\subsection{différence entre script exécuté coté client et coté serveur:}
+\begin{itemize}
+	\item \textbf{les scripts coté client:}
+	\begin{enumerate}
+		\item s'exécutent sur votre (navigateur) ordinateur.
+		\item code intégré à la page et peut être exécuté au moment de son chargement
+		\item permet l'accès à l'objet du navigateur(simplifier l'apparence).
+	\end{enumerate}
+	\subitem \textbf{inconvénient:}
+	\begin{enumerate}
+		\item code simple mais pour des applications limitées.
+	\end{enumerate}
+	\item \textbf{les scripts coté serveur:}
+	\begin{enumerate}
+		\item les programmes sont stockés sur le serveur comme les autres document.
+		\item permet l'affichage des différents page selon un choix au une saise de l'utilisateur,c'est pour cela que le serveur peut consulter plusieurs programmes (script)comme PHP.
+		\item ces scripts définissent la façon dont un serveur et un navigateur peuvent communiquer.
+		\item code source du script protégé.
+		\item ensemble de conventions permettant à des serveurs web et à des programmes externes de communiquer.
+		\item intégrer des bases de données.
+	\end{enumerate}
+		\subitem \textbf{inconvénient:}
+	\begin{enumerate}
+		\item certains scripts ne peuvent pas être exécutés sur n'importe quel serveur(demande d'un serveur spécifique).
+		\item chaque fois que le programme est sollicité,l'interpréteur doit être lancé et cela dépend de plusieurs facteurs:la puissance de serveur,le nombre de requêtes,la durée de la charge de programme.
+	\end{enumerate}
+\end{itemize}
+\subsection{Java Script :(coté client)}
+\paragraph{}
+même si la vague java script n'a pris forme qu'en 1995, elle a rapidement gagné du terrain,elle a en affect déferlé sur le mode du développement web jusqu'à établir son hégémo,ie,aussi bien sur les navigateurs que sur les serveurs.
+\paragraph{java script}
+propose de nombreuses fonctions et commandes permettant d'effectuer des calculs,de manipuler des chaines,de jouer des sons,d'ouvrir des fenêtres et des URL et de vérifier des formulaires.
+\paragraph{}
+le code est intégré à la page et permet d'améliorer la présentation et l'interactivité des pages web.
+\section{PHP (Personal Home Page):}
+\paragraph{}
+PHP est un langage interprété (un langage de script) exécuté du côté
+serveur (comme les scripts CGI, ASP, …) et non du côté client (un script
+écrit en Javascript ou une applet Java s'exécute sur notre ordinateur). La
+syntaxe du langage provient de celles du langage C, du Perl et de Java.
+\begin{itemize}
+	\item Ses principaux atouts sont:
+	\subitem
+	\begin{enumerate}
+		\item la gratuité et la disponibilité du code source.
+		\item la simplicité d'écriture de scripts.
+		\item la possibilité d'inclure le script PHP au sein d'une page HTML(contrairement aux scripts CGI, pour lesquels il faut écrire des lignes de code pour afficher chaque ligne en langage HTML).
+		\item la simplicité d'interfaçage avec des bases de données (de
+		nombreux SGBD sont supportés, mais le plus utilisé avec ce langage est MySQL, un SGBD gratuit disponible sur de
+		nombreuses plateformes: UNIX, LINUX, WINDOWS, MACOS X,
+		SOLARIS, etc.…);
+		\item l'intégration au sein de nombreux serveurs web (Apache,
+		Microsoft IIS, etc.).
+	\end{enumerate}
+
+\end{itemize}
+\subsection{Les grandes fonctions de PHP:}
+\paragraph{}
+Pour donner un aperçu des diverses possibilités de PHP, Voici les groupes de fonctions disponibles dans PHP, nous allons voir c’est impressionnant et cela donne une bonne idée de la puissance du langage :
+\begin{enumerate}
+	\item Gestion des chaînes de caractères.
+	\item Les fonctions mathématiques.
+	\item La gestion des dates et des calendriers : Les images dynamiques.
+	\item Économiser les ressources sur le serveur.
+\end{enumerate}
+
+\subsection{quelques avantages de PHP:}
+\paragraph{}
+Les principaux concurrents de PHP sont Perl, Microsoft Active Server
+Pages (ASP), Java Server Pages (JSP), et Allaire Cold Fusion.
+\paragraph{}
+Par rapport à tous ces produits, PHP possède plusieurs avantages
+significatifs :
+\begin{enumerate}
+	\item \textbf{Des performances élevées :} PHP est très efficace. Avec un seul	serveur d’entrée de gamme, vous pouvez servir des millions de requêtes par jour.
+	\item \textbf{Des interfaces vers différents systèmes de bases de données :} PHP	contient des connections natives vers la plupart des systèmes de	bases de données. En plus de MySQL, nous pouvons connecte directement aux bases de données PostgreSQL, mSQL, Oracle,
+	dbm, InterBase, Informix….
+	\item \textbf{Bibliothèques intégrées pour la plupart des tâches Web :} comme PHP a été conçu pour être utilisé sur le Web, il possède plusieurs fonctions intégrées permettant d’effectuer la plupart des tâches en rapport avec le Web. Nous pouvons ainsi générer des images GIF en temps réel, nous connecter à d’autres services réseaux, envoyer
+	des e-mails, travailler avec les cookies, et générer des documents 	PDF, avec seulement quelques lignes de code.
+	\item \textbf{Prix :} PHP est gratuite. Nous pouvons nous procurer la dernière version à n’import quel moment sur le site http://www.php.net,sans payer quoi que ce soit.
+	\item \textbf{Apprentissage de PHP :} La syntaxe de PHP est fondée sur celle d’autres langages de programmation, essentiellement le C et Perl.Ou en un autre langage analogue au C, comme le C++ou Java.
+	\item \textbf{Portabilité :} PHP est disponible pour plusieurs systèmes d’exploitation différents. Nous pouvons écrire notre code PHP pour des systèmes d’exploitation de type Unix, comme Linux ou
+	FreeBSD, pour des versions.
+	\item commerciales d’Unix comme Solarise ou IRIX, ou pour différentes
+	versions de Windows.
+	\item \textbf{Code source :} Le code source de PHP est disponible gratuitement.Contrairement aux produits commerciaux, dont les sources ne sont pas distribuées, nous avons tout à fait la possibilité de modifier ce	langage, ou d’y ajouter de nouvelles caractéristiques.
+\end{enumerate}
+\subsection{origine de PHP:} 
+\paragraph{}
+Le langage PHP a été mis au point au début d'automne 1994 par \textbf{Rasmus Lerdorf}. Ce langage de script lui permettait de conserver la trace des utilisateurs venant consulter son CV sur son site, grâce à l'accès à une base de données par l'intermédiaire de requêtes SQL. Ainsi, étant on né que de nombreux internautes lui demandèrent ce programme,
+\paragraph{}
+ \textbf{Rasmus Lerdorf} mit en ligne en 1995 la première version de ce programme qu'il baptisa Personal Sommaire Page Tools, puis Personal Home Page v1.0 (traduisez page personnelle version 1.0).
+\paragraph{}
+Étant donné le succès de PHP 1.0, Rasmus Lerdorf décida d'améliorer ce
+langage en y intégrant des structures plus avancées telles que des boucles,des structures conditionnelles, et y intégra un package permettant
+d'interpréter les formulaires qu'il avait développé (FI, Form Interpreter)
+ainsi que le support de MySQL. C'est de cette façon que la version 2 du langage, baptisée pour l'occasion PHP/FI version 2, vit le jour durant l'été 1995. Il fut rapidement utilisé sur de nombreux sites (15000 fin 1996, puis 50000 en milieu d'année 1997).
+\paragraph{}
+A partir de 1997, Zeev Suraski et Andi Gurmans rejoignèrent Rasmus pour
+former une équipe de programmeurs afin de mettre au point PHP 3
+(Stig Bakken, Shane Caraveo et Jim Winstead les rejoignèrent par la suite). C'est ainsi que la version 3.0 de PHP fut disponible le 6 juin 1998.
+\paragraph{}
+A la fin de l'année 1999, une version bêta de PHP, baptisée PHP4 est
+apparue...
+\subsection{SGBD supportes par PHP:}
+\paragraph{}
+PHP permet un interfaçage simple avec de nombreux SGBD. La
+version 3 du langage supporte les SGBD suivants:
+\paragraph{}
+DBase .Empressé .File Pro .Informix .Inter base .MSQL .MySQl .Oracle .PostgreSQL . Solid .Sybase .Velocis .Unix dbm.
+\subsection{L'interprétation du code par le serveur:}
+\paragraph{}
+Un script PHP est un simple fichier texte contenant des instructions
+écrites à l'aide de caractères ASCII 7 bits (des caractères non accentués)
+incluses dans un code HTML à l'aide de balises spéciales et stocké sur le
+serveur. Ce fichier doit avoir l'extension \textbf{.php} pour pouvoir être
+interprété par le serveur!Ainsi, lorsqu'un navigateur (le client) désire
+accéder à une page dynamique réalisé en php:
+\begin{enumerate}
+	\item Le serveur reconnaît qu'il s'agit d'un fichier php.
+	\item Il lit le fichier php.
+\end{enumerate}
+\paragraph{}
+dés que le serveur rencontre une balise indiquant que les lignes suivantes
+sont du code php, il \textbf{passe} en mode php, ce qui signifie qu'il ne lit plus les instructions: il les exécute!
+\paragraph{}
+Lorsque le serveur rencontre une instruction, il la transmet à l'interpréteur, L'interpréteur exécute l'instruction puis envoie les sorties éventuelles à l'interpréteur A la fin du script, le serveur transmet le résultat au client (le navigateur) Un script PHP est interprété par le serveur, les utilisateurs ne peuvent donc pas voir la source! Le code php stocké sur le serveur n'est donc jamais visible directement par le client puisque dès qu'il en demande l'accès, le serveur L’interprète!
+
+\paragraph{}
+De cette façon aucune modification n'est à apporter sur les navigateurs.
+\subsection{Implantation au sein du code HTML:}
+\paragraph{}
+Pour que le script soit interprété par le serveur deux conditions sont
+nécessaires:
+\begin{itemize}
+	\item  fichier contenant le code doit avoir l'extension \textbf{.php} et non \textbf{.html}
+	\item 	Le code php contenu dans le code HTML doit être délimité par
+	les balises
+	 \begin{lstlisting}[language=html]
+	 <?php?>
+	 \end{lstlisting}
+\end{itemize}
+un script PHP doit:
+\begin{itemize}
+	\item comporter l'extension \textbf{.php} .
+	\item Être imbriqué entre les délimiteurs
+	\begin{lstlisting}[language=html]
+	<?php?>
+	\end{lstlisting}
+	 Pour des raisons de conformité avec certaines normes (XML et ASP par exemple).
+	 \item Plusieurs balises peuvent être utilisées pour délimiter un code PHP.
+	\begin{lstlisting}[language=html]
+		<?php?>
+	\end{lstlisting}
+	\begin{lstlisting}[language=html]
+		<script language="php"> et </script>
+	\end{lstlisting}
+\end{itemize}
+
+\paragraph{Exemple d'un Script PHP}
+ Balises d'ouvertures et de fermetures
+\begin{lstlisting}[language=php]
+	<?php 
+		...
+	?>
+\end{lstlisting}
+ ou 
+\begin{lstlisting}[language=php]
+	<? 
+		...
+	?>
+\end{lstlisting} 
+ou 
+\begin{lstlisting}[language=php]
+	<script language="php">
+		...
+	</script>
+\end{lstlisting}
+
+\subsection{Les SGBD (système de gestion de bases de données) :}
+\paragraph{}
+Un système de gestion de bases de données est le logiciel qui permet d’intégrer avec les bases de données. Il permet à un utilisateur de définir des données de les consulter la base et de les mettre à jour, un aspect essentiels de ce système est permet à un utilisateur de spécifier en des terme abstraits les données.
+\paragraph{}
+Un système de gestion de bases de données (SGBD) est une collection de logiciels permettant de créer, de gérer et d’interroger efficacement une base de données indépendamment du domaine d’application.
+\paragraph{}
+De nombreux SGBD sont disponibles sur marché, partant des SGBD gratuits jusqu’aux SGBD destinés spécialement aux professionnel, comportant de plus nombreuses fonctionnalités, mais plus coûteux.
+\section{SQL (Structured Query Language) :}
+\paragraph{}
+Le SQL est un langage naturel proche du discours humain, signifiant Structured Query Language (Langage d'Interrogation Structuré). Développé par le laboratoire de recherche d'IBM à San José en Californie
+à la fin des années 70, il est reconnu en tant que norme officielle de langage de requête Relationnelle par l'institut ANSI et par l'organisme ISO. Il facilite grandement la manière d'indiquer ce que l'on désire obtenir à la machine. Est un langage permettent de communiquer avec les base de données,
+nous pouvons notamment utiliser SQL pour extraire ou ajouter des données, supprimer ou mettre à jour des enregistrements d’une base de données, changer des colonnes dans plusieurs lignes, ajouter des colonnes
+à des tables ou encore ajouter et supprimer des tables.\\
+\textbf{Avantage :} SQL est constitué d’un petit nombre d’éléments de langage permettant une interaction efficace avec une base de données.
+\paragraph{}
+Les commandes SQL ci-dessous font partie des éléments les plus
+fréquemment utilisés :
+\begin{itemize}
+	\item \textmd {\textbf{SELECT:}} permet d’extraire (interroger) des informations d’une base de données.
+	\item \textmd {\textbf{INSERT:}} permet d’ajouter des enregistrements à une base de données.
+	\item \textmd {\textbf{UPDATE:}} permet de mettre à jour des informations dans une base de données.
+	\item \textmd {\textbf{DELETE:}} permet de supprimer des informations dans une base de données.
+\end{itemize}
+\section{Introduction aux serveurs web:}
+\paragraph{}
+Un serveur Web est un logiciel permettant à des clients d'accéder à
+des pages web, c'est-à-dire en réalité des fichiers au format HTML à partird'un navigateur (aussi appelé browser) installé sur leur ordinateur distant.
+\paragraph{}
+Un serveur web est donc un simple logiciel capable d'interpréter
+les requêtes http arrivant sur le port associé au protocole http (par défaut le port 80), et de fournir une réponse avec ce même protocole.
+
+\subsection{Principaux serveurs web:}
+\paragraph{}
+Les principaux serveurs web existant sur le marché sont entre autres:
+\begin{itemize}
+	\item Apache
+	\item Microsoft IIS
+	\item Microsoft PWS
+	\item Xitami
+\end{itemize}
+
+Parmi les serveurs web précités, nous avons choisi et travaillé avec
+est Apache.
+
+\subsection{Introduction à Apache:}
+\paragraph{}
+Apache est le serveur web le plus répandu sur Internet. Il s'agit d'une
+application fonctionnant à la base sur les systèmes d'exploitation de type
+Unix, mais il a désormais été porté sur de nombreux systèmes, dont Microsoft Windows.\\
+Apache (prononcé en français ou bien pour les anglophones Apatchy) tire son nom de la façon dont il a été mis au point (A patchy server traduisez un serveur rafistolé) car il est le fruit d'une multitude de
+correctifs logiciels afin d'en faire une solution très sûre. En effet apache est considéré comme sûr dans la mesure où peu de vulnérabilité le
+concernant sont publiées.\\
+Ainsi, dés qu'un bug ou une faille de sécurité est décelée, ceux-ci
+sont rapidement corrigés et une nouvelle version de l'application est
+éditée.\\
+
+Apache possède désormais de nombreuses fonctionnalités dont la possibilité de définir une configuration spécifique à chaque fichier ou
+répertoire partagé, ainsi que de définir des restrictions d'accès grâce aux fichiers htaccess.\\
+
+\subsection{Les fichiers htaccess:}
+\paragraph{}
+Les fichiers .htaccess sont des fichiers de configuration d'Apache,
+permettant de définir des règles dans un répertoire et dans tous ses sous
+répertoires (qui n'ont pas de tel fichier à l'intérieur). On peut les utiliser pour protéger un répertoire par mot de passe, ou pour changer le nomou l'extension de la page index, ou encore pour interdire l'accès au
+répertoire.\\
+\subparagraph{Intérêt des fichiers htaccess:}
+
+\paragraph{}
+Les fichiers .htaccess peuvent être utilisés dans n'importe quel
+répertoire virtuel ou sous répertoire.
+\paragraph{}
+Les principales raisons d'utilisation des fichiers .htaccess sont:
+\begin{itemize}
+	\item gérer l'accès à certains fichiers.
+	\item Protéger l'accès à un répertoire par un mot de passe.
+	\item Protéger l'accès à un fichier par un mot de passe.
+	\item Définir des pages d'erreurs personnalisées.
+\end{itemize}
+\section{Présentation de MysQl:}
+\paragraph{}
+MySQL est un Système de Gestion de Bases de Données (SGBD) fonctionnant sous Linux et Windows. Depuis la version 3.23.19, MySQL est sous licence GPL (aussi bien sous Linux que Windows), ce qui signifie qu'il peut être utilisé gratuitement.
+\paragraph{}
+Les systèmes de gestion de base de données tels que MySQL permettent de manipuler facilement et avec beaucoup de souplesse un très important volume de données. Toutefois, aussi robuste soit MySQL, il peut être intéressant de récupérer l'ensemble des données que contient la base de données, on appelle exportation le fait de formater dans un fichier (appelé dump) toutes les informations nécessaires à la création d'une base de données identique.
+\paragraph{}
+A l'inverse, on appelle importation le fait de créer dans un SGBD une nouvelle base de données à partir d'un fichier d'exportation (dump).
+\paragraph{}
+MySQL offre un certain nombre d'outils permettant d'exporter ses bases vers d'autres SGBD ou bien de les importer.
+
+\section{Présentation des bases de données:}
+\paragraph{}
+Une base de données permet d'enregistrer des données de façon organisée et hiérarchisée. Certes, vous connaissez les variables, mais celles-ci restent en mémoire seulement le temps de la génération de la page. Vous avez aussi appris à écrire dans des fichiers, mais cela devient vite très compliqué dès que vous avez beaucoup de données à enregistrer.
+Or, il va bien falloir stocker quelque part la liste de vos membres, les messages de vos forums, les options de navigation des membres… Les bases de données constituent le meilleur moyen de faire cela de façon simple et propre.
+
+\subsection{système de gestion de base de données:}
+\paragraph{}
+est un logiciel système destiné à stocker et à partager des informations dans une base de données, en garantissant la qualité, la pérennité et la confidentialité des informations, tout en cachant la complexité des opérations.\\
+Un SGBD (en anglais DBMS pour database management system) permet d'inscrire, de retrouver, de modifier, de trier, de transformer ou d'imprimer les informations de la base de données. Il permet d'effectuer des comptes-rendus des informations enregistrées et comporte des mécanismes pour assurer la cohérence des informations, éviter des pertes d'informations dues à des pannes, assurer la confidentialité et permettre son utilisation par d'autres logiciels. \\
+Les plus connus SGBD sont:
+\begin{itemize}
+	\item \textbf{PostgreSQL :} libre et gratuit comme MySQL, avec plus de fonctionnalités mais un peu moins connu ;
+	\item \textbf{SQLite:} libre et gratuit, très léger mais très limité en fonctionnalités ;
+	\item \textbf{Oracle :} utilisé par les très grosses entreprises ; sans aucun doute un des SGBD les plus complets, mais il n'est pas libre et on le paie le plus souvent très cher ;
+	\item \textbf{Microsoft SQL Server :} le SGBD de Microsoft.
+	\item \textbf{MySQL :} libre et gratuit, c'est probablement le SGBD le plus connu. Nous l'utiliserons dans cette partie ;
+\end{itemize}
+\paragraph{}
+Nous allons utiliser MySQL,comme SGBD pour communiquer avec base de données.
+\paragraph{}
+Nous allons communiquer avec le SGBD pour lui donner l'ordre de récupérer ou d'enregistrer des données.on utilise le langage SQL.La bonne nouvelle, c'est que le langage SQL est un standard, c'est-à-dire que quel que soit le SGBD que vous utilisez, vous vous servirez du langage SQL. Lamauvaise, c'est qu'il y a en fait quelques petites variantes d'un SGBD à l'autre, mais cela concerne généralement les commandes les plus avancées.
+\subsection{la jonction entre nous et MySQL:}
+\paragraph{}
+Pour compliquer un petit peu l'affaire,on ne va pas pouvoir parler à MySQL directement.seul PHP peut le faire !\\
+C'est donc PHP qui va faire l'intermédiaire entre nous et MySQL. On devra demander à PHP : « Va dire à MySQL de faire ceci. »\\
+
+Voyez la figure suivante:
+\begin{figure}[h]
+	\includegraphics[]{imag/8.png}
+	\caption{Communication entre PHP et MySQL}
+\end{figure}
+Voici ce qui peut se passer lorsque le serveur a reçu une demande d'un client qui veut poster un message sur vos forums :
+\begin{enumerate}
+	\item le serveur utilise toujours PHP, il lui fait donc passer le message ;
+	\item PHP effectue les actions demandées et se rend compte qu'il a besoin de MySQL. En effet, le code PHP contient à un endroit « Va demander à MySQL d'enregistrer ce message ». Il fait donc passer le travail à MySQL ;
+	\item MySQL fait le travail que PHP lui avait soumis et lui répond « O.K., c'est bon ! » ;
+	\item PHP renvoie au serveur que MySQL a bien fait ce qui lui était demandé.
+\end{enumerate}
+\paragraph{En résumé}
+\begin{itemize}
+	\item Une base de données est un outil qui stocke vos données de manière organisée et vous permet de les retrouver facilement par la suite.
+	\item On communique avec MySQL grâce au langage SQL. Ce langage est commun à tous les systèmes de gestion de base de données (avec quelques petites différences néanmoins pour certaines fonctionnalités plus avancées).
+	\item PHP fait l'intermédiaire entre vous et MySQL.
+	\item Une base de données contient plusieurs tables.
+	\item Chaque table est un tableau où les colonnes sont appelées « champs » et les lignes « entrées ».
+\end{itemize}
+
+\section{PhpMyAdmin}
+\paragraph{}
+Il existe plusieurs façons d'accéder à sa base de données et d'y faire des modifications. On peut utiliser une ligne de commande (console), exécuter les requêtes en PHP ou faire appel à un programme qui nous permet d'avoir rapidement une vue d'ensemble. Ici, je vous propose de découvrir \textbf{phpMyAdmin}, un des outils les plus connus permettant de manipuler une base de données MySQL.
+
+\paragraph{}
+
+PhpMyAdmin est un outil logiciel gratuit écrit en PHP, destiné à gérer l'administration de MySQL sur le Web. PhpMyAdmin prend en charge une large gamme d'opérations sur MySQL et MariaDB. Les opérations fréquemment utilisées (gestion des bases de données, des tableaux, des colonnes, des relations, des index, des utilisateurs, des autorisations, etc.) peuvent être effectuées via l'interface utilisateur, alors que vous avez toujours la possibilité d'exécuter directement une instruction SQL.
+\section{\textbf{WampServer :}}
+\paragraph{}
+WampServer est une plateforme de développement Web de type WAMP, permettant de faire fonctionner localement (sans se connecter à un serveur externe) des scripts PHP. WampServer n'est pas en soi un logiciel, mais un environnement comprenant deux serveurs (Apache et MySQL), un interpréteur de script (PHP), ainsi que phpMyAdmin pour l'administration Web des bases MySQL.
+\paragraph{}
+Il dispose d'une interface d'administration permettant de gérer et d'administrer ses serveurs au travers d'un tray icon (icône près de l'horloge de Windows).\\
+WAMP est un acronyme informatique signifiant :\\
+\textbullet « Windows »\\
+\textbullet « Apache »\\
+\textbullet « MySQL »\\
+\textbullet « PHP »\\
+
+\section{Conclusion :}
+\paragraph{}
+En conclusion, ce chapitre donne une idée globale sur des sites Web dynamiques ou applications Web et Serveurs et base de données et Relation entr PHP et le système de gestion de base de données et leurs principes de fonctionnement.

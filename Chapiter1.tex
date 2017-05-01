@@ -1,0 +1,193 @@
+\chapter{La technologie du Web}
+\minitoc
+
+\section{Introduction :}
+\paragraph{}
+Il est impératif de différencier Internet el le Web, ces deux mots sont très proches dans l’esprit de chacun mais correspondent à deux notions différentes :
+\subparagraph{Internet :}
+c’est le nom donné à un ensemble d’ordinateurs connectés les uns aux autres, selon différents modes (satellite, fibre optique, …) et référencé de manière très précise (attribution d’une adresse à chaque ordinateur). On dit d’internet que c’est un réseau physique (des ordinateurs reliés par des câbles).
+\paragraph{}
+A la différents de l’Internet, le \textbf{Web} est la contraction de \textbf{World Wide Web} (www) : ce qui signifie « toile d’araignée Mondiale ». Le Web désigne un ensemble mondial de documents de tout type, reliés entre eux a l’aide des liens hypertexte. La vision du monde devient alors un graphe de ressources informationnelles reparties sur Internet on accède au Web au moyen d’un logiciel appelé navigateur (Internet Explorer, Mozilla Firefox, safari …).
+\paragraph{Par analogie,}
+ lorsque deux personnes discutent entre elles, on a besoin :
+ 
+ \begin{itemize}
+ 	\item \textbf{Du matériel :} qui permet physiquement l’échange de données et c’est Internet.
+ 	\item \textbf{D’un monde de communication :} une langue commune qui leur permet de se comprendre et rend possible l’échange d’idée et c’est le Web
+ \end{itemize}
+ \paragraph{}
+ C’est aussi le cas pour notre projet qui consiste à développer un site web d’un \textbf{Virtuel académie} qui a diffusé plusieurs vidéos et documents Vers l'invite utilisateur vise à rassembler un groupe de vidéos et documents éducatives dans de nombreux des catégories.
+ 
+ \section{Avantages du Web Pour l’utilisateur :}
+ \paragraph{}
+ L’usage du Web donne à l’utilisateur les avantages suivants :
+ \begin{itemize}
+ 	\item L’interface graphique avec la souris.
+ 	\item La possibilité de sauvegarder des documents différents formats, d’annoter de documents, de laisser des marques (pour un accès ultérieur), d’avoir un historique de navigation.
+ 	\item La visualisation de document HTML1.
+ 	\item La restriction de différents formats de fichiers son, vidéos, graphique.
+ \end{itemize}
+\section{Notions fondamentales : }
+\paragraph{Web master :}
+on appelle Web master une personne en charge d’un site web, c’est-à-dire généralement la personne qui conçoit un site Web et le met à jour.
+\paragraph{Web mastering :}
+désigne l’ensemble de tâches que le Web master doit effectuer pour créer le site, le faire connaitre.
+\paragraph{Page Web : }
+lorsque on charge un document HTML\footnote{HyperText Markup Language} sur le navigateur, la page visualisée, est appelée Page Web.
+\paragraph{Site Web : }
+généralement lorsqu’un individu ou une entité diffuse des informations sur le web, il le fait à l’aide de plusieurs pages situées sur le même serveur, cet ensemble de pages constitue ce qu’on appelle un Site Web.
+\paragraph{Hypertexte : }
+un document est dit hypertexte lors qu’il permet d’accéder aux autres documents au moyen d’un simple clic de souris sur une partie du texte, qui est un lien.
+\paragraph{}
+Les liens vers d’autres documents sont mis en évidence (souligné, couleur).
+\paragraph{}
+Les liens entrainent vers d’autres documents hypertexte et soit stockés localement, soit mis sur un autre ordinateur d’internet.
+\section{Modes d’interaction entre ordinateurs :}
+\paragraph{}
+Internet utilise deux modes d’interaction entre ordinateurs :
+\subsection{Mode terminal : }
+\paragraph{}
+les accès sont réservés et demandent un identifiant obtenu auprès du gestionnaire.
+\subsection{Mode client/serveur :}
+\subsubsection{Concepts fondamentaux :}
+\paragraph{Client : }
+processus(logiciel)qui demande un service au travers du réseau.
+\paragraph{Serveur : }
+processus qui offre un service au travers du réseau.
+
+\begin{itemize}{}
+	\item Mode de fonctionnement courant d’un serveur :
+	\begin{enumerate}
+	\item Attente d’un client sur un port réservé.
+	\item Choix d’un port de dialogue avec le client.
+	\item Génération d’un fils pour gérer la requête du client.
+	\item Retour en attente de client.
+	\end{enumerate} 
+	\item  Problèmes à prendre en compte au niveau du serveur :
+	\begin{enumerate}
+	\item Gestion des demandes qui risquerait de les bloquer.
+	\item Gestion des attaques (protection de son fonctionnement et de ses données).
+	\end{enumerate}	
+
+\end{itemize}
+	 
+\paragraph{Un serveur www :}	
+C’est un programme qui s’exécute sur un ordinateur dans le seul but de répondre à des requêtes de logiciel client www tournant sur d’autres ordinateurs, et qui se connectent à celui-ci par l’intermédiaire d’un réseau.
+\paragraph{Un client www :}
+C’est un programme qui permet à un utilisateur de soumettre des requêtes à un serveur www, et de visualiser le résultat. Mais un client et capable également de dialoguer avec d’autres type de serveurs, en particulier avec les serveurs FTP …etc.
+\subsubsection{Présentation de l’architecture client/serveur (à deux niveaux) :}
+\paragraph{}
+L’architecture client/serveur a deux niveaux (aussi appelée architecture 2-tiers) ou aussi appelé l’architecture « client-serveur » est assez simple. Caractérise les systèmes client/serveurs dans lesquels le client demande une ressource et le serveur la lui fournit directement. Cela signifie que le serveur ne fait pas appel à une autre application afin de fournir le service.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{./imag/1.jpg}
+	\caption{L’architecture client/serveur a deux niveaux}
+\end{figure}
+\subsubsection{Présentation l’architecture client/serveur (à trois niveaux) :}
+\paragraph{}
+Dans l’architecture à trois niveaux il existe un niveau intermédiaire. On aura une architecture partagée entre : 
+
+\begin{enumerate}
+	\item \textbf{Client :}le demandeur de ressources.
+	\item \textbf{Serveur d’application :} serveur chargé de fournir la ressource mais faisant appel à un autre serveur.
+	\item \textbf{Serveur secondaire :}généralement un serveur de base de données fournisse un service au premier serveur.
+\end{enumerate}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm]{./imag/2.jpg}
+	\caption{L’architecture client/serveur à trois niveaux}
+\end{figure}
+\paragraph{Comparaison des deux architectures :}
+L’architecture à deux niveaux est donc architecture client/serveur, dans laquelle le serveur est polyvalent, c’est-à-dire qu’il est capable de fournir directement l’ensemble de ressource demandées par le client. Dans l’architecture à trois niveaux par contre les applications au niveau du serveur sont délocalisées, c’est-à-dire que chaque serveur est spécialisé dans une tache (serveur Web, serveur de base de données par exemple).\\
+Ainsi l’architecture à trois niveaux permet :
+\begin{itemize}
+	\item Une plus grande sécurité (la sécurité peut être définie pour chaque service).
+	\item Une plus grande flexibilité/souplesse.
+	\item De meilleurs performances (les taches sont partagées).
+\end{itemize}
+\paragraph{}
+Deux grands chemins s’empruntent pour le développement sur le Web. Ces deux chemins se croisent, se complètent ou prennent parfois des directions radicalement différentes. Il s’agit du chemin du « statique » et le chemin du « dynamique ».
+\subsection{Le Web Statique :}
+Caractérise les systèmes clients/serveurs pour lesquels le client demande une ressource et le serveur la lui fournit directement, en utilisant ses propres ressources.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{./imag/3.png}
+	\caption{L’architecture client/serveur d'un Page Statique}
+\end{figure}
+Le Web statique est organisé selon l’architecture client/serveur cote client.
+\subsection{Le Web Dynamique :}
+\paragraph{}
+permet aux internautes d'interagir avec un serveur Web et de stocker des données coté serveur.Ainsi sont développé des sites qui gèrent des millions de données.
+\paragraph{}
+Les langages utilisés coté client sont,pour des raison évidents de sécurité,assez limitatifs.Les applications plus complexes seront traitées dans l'espace plus sécurisé qu'est le serveur qui héberge le site Web.Les traitements sont alors exécutés coté serveur et seuls les résultats seront envoyés au navigateur de l'utilisateur.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{./imag/4-1.png}
+	\caption{L’architecture client/serveur d'un Page Dynamique}
+\end{figure}
+
+\section{Les Services du Web:}
+\paragraph{}
+les services Web (en anglais Web service) représentent un mécanisme de communication entre application distantes à travers les réseau internet indépendant de tout langage de programmation et de toute plate-forme d'exécution:
+\begin{itemize}
+	\item utilisant le protocole HTTP comme moyen de transport. ainsi,les communications s'effectuent sur un support universel.
+	\item employant une syntaxe basée sur La notation \textbf{XML} pour décrire les appels de fonctions distantes et les données échangées.
+	\item organisant les mécanismes d'appel et de réponse.
+\end{itemize}
+\paragraph{}
+grâce aux services web, les applications être vues comme un ensemble de services métiers, structurés et correctement décrits.dialoguant selon un standard international plutôt qu'un ensemble d'objets et de méthodes entremêlés
+\section{Qu'est ce qu'un site web ?}
+\subsection{Définition:}
+un site internet est un dossier présent sur un ordinateur distant appelé serveur(on l'appelle également hébergeur), il est connecté en permanence à internet. ce dossier accueille les pages du site, ressources accessibles via une adresse unique.
+\subsection{le cycle de vie d'un site web:}
+\paragraph{}
+le cycle de vie d'un site web possède deux principales facettes qui sont :
+\subsubsection{la création:}
+\paragraph{}
+correspond à la concrétisation d'une idée qui comporte un grand nombre de phases:
+\begin{enumerate}
+	\item \textbf{conception},représentant la formalisation de l'idée.
+	\item \textbf{réalisation},correspondant au développement du site web.
+	\item \textbf{hébergement},se rapportant à la mise en ligne du site.
+\end{enumerate}
+
+\subsubsection{l'exploitation:}
+\paragraph{}
+correspondant à la gestion quotidienne du site.à son évolution et à sa mise à jour.
+\paragraph{l'exploitation}
+du site englobe notamment les activités suivantes:
+\begin{enumerate}
+	\item veille, afin d'assurer un suivi des technologies,du positionnement du site et de celui des concurrents.
+	\item promotion et référencement,permettant de développer son audience.
+	\item maintenance et mise à jour.représentant l'animation quotidienne du site et le maintien de son bon fonctionnement.
+\end{enumerate}
+\subsection{types de site web:}
+\paragraph{}
+on définit deux types de base de site web:
+\subsubsection{sites web statiques:}
+\paragraph{}
+site web constitué de page HTML prédéfinies,créés textuellement à l'aide d'un éditeur HTML.le contenu des pages est fixe.
+\subsubsection{sites web dynamiques:}
+\paragraph{}
+sites qui présentent un contenu varié, selon ce que l'internaute désire voir.contrairement à un site statique ou tout ce que vous voyez à l'écran est déjà programmé dans une page et qui ne changera jamais,le contenu varie grandement lors de la navigation,même si la page semble demeurer telle quelle.
+\paragraph{}
+c'est le cas pour notre site web qui donne aux utilisateurs (visiteurs ou membres)la possibilité de visualiser des vidéos et documents et même d'ajouter d'autres pour ceux qui possèdent un compte.
+\subsection{intérêts pour les sites web:}
+\paragraph{}
+la mise en place d'un site web peut être motivée par plusieurs raisons:
+\begin{enumerate}
+	\item \textbf{Le besoin de visibilité:} dans la mesure ou il fait l'objet d'une bonne campagne de promotion,il peut être un moyen pour une organisation en vu d'augmenter sa visibilité.
+	\item \textbf{l'amélioration de la notoriété:} grâce à un site web institutionnel ou un mini site web événementiel, une enseigne peut développer sa popularité auprès du public.
+	\item \textbf{la collecte des données:} représente pour les entreprises un formidable opportunité pour recueillir de données sur leurs client ou bien de démarcher de nouveaux prospects.
+	\item \textbf{la vente en ligne:} offre une grande opportunité en termes de commercialisation (le e-commerce,payement on-ligne).
+	\item \textbf{la mise en place d'un support aux utilisateurs:} il est possible de mettre à la disposition des internautes un maximum d'informations commerciales ou techniques.à moindre cout(e-learning).
+	\item \textbf{l'efficacité:}plus efficace que les documents imprimés ou les média traditionnels.
+	\item \textbf{la mise à jour:} facilement mis à jour pour suivre l'évolution des produits ou services ou projets.
+	\item \textbf{la flexibilité:} il se modifie aisément pour répondre aux nouveaux besoins.
+\end{enumerate}
+
+\section{Conclusion :}
+\paragraph{}
+En conclusion, ce chapitre donne une idée globale sur l'Internet et
+une description des sites Web dynamiques ou applications Web et leurs principes de fonctionnement.

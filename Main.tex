@@ -1,0 +1,118 @@
+% !TeX spellcheck = <none>
+\documentclass[12pt,a4paper]{report}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{french}  
+\usepackage[french]{minitoc}
+ \usepackage{geometry}
+ \geometry{
+ 	a4paper,
+ 	left=20mm,
+ 	top=20mm,
+ 	bottom=20mm,
+ }
+ 
+ %Chapiter Styles
+ \makeatletter
+ \def\thickhrulefill{\leavevmode \leaders \hrule height 1.2ex \hfill \kern \z@}
+ \def\@makechapterhead#1{
+ 	\vspace*{10\p@}%
+ 	{\parindent \z@ \centering \reset@font
+ 		\thickhrulefill\quad 
+ 		\scshape\bfseries\textit{\@chapapp{}  \thechapter}  
+ 		\quad \thickhrulefill
+ 		\par\nobreak
+ 		\vspace*{10\p@}%
+ 		\interlinepenalty\@M
+ 		\hrule
+ 		\vspace*{10\p@}%
+ 		\Huge \bfseries #1 \par\nobreak
+ 		\par
+ 		\vspace*{10\p@}%
+ 		\hrule
+ 		\vskip 100\p@
+ }}
+%*******************
+\usepackage{array}
+\usepackage{tabularx}
+
+\usepackage{listings}
+\usepackage{color}
+
+%Code Styles
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=2pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+}
+\lstset{style=mystyle}
+%*******************
+\usepackage{graphicx}
+\usepackage{abstract}
+
+\usepackage[svgnames]{xcolor}
+
+\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}}
+\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} 
+\newcommand*{\titleBC}{\begingroup
+	\centering 	
+	\def\CP{\textit{\Huge Création Et Conception D’un site web dynamique}} % Title
+	\settowidth{\unitlength}{\CP} 
+	{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip]
+	\textcolor{Sienna}{\CP} \\[\baselineskip]
+	{\color{RosyBrown}\Large d’un Virtual academy} \\
+	{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}}
+	\vfill
+	{\Large Korichi Tarzi . Ferhat Hamza}\\ 
+	\vfill
+	\plogo\\[0.5\baselineskip]
+	\endgroup}
+
+\begin{document}
+	\dominitoc
+	\input{PageDeGarde.tex}
+%	\titleBC
+	\begin{abstract}
+		Les enseignants et les étudiants et, durant leur travail quotidien,recensent les problèmes rencontrés.
+		Ils tiennes en particulier a :\\
+		\textendash  Ne pas élargir le contenu du programme scolaire.\\
+		\textendash  Le manque de compréhension du contenu du cours par l'étudiant .
+		\paragraph{}
+		donc le but de notre projet est à mettre en place un site web dynamique pour une Virtual Academy, permettant essentiellement la mise à la disposition  des étudiants, des vidéo et des documents classées par catégories Pour les aider à obtenir une bonne compréhension de leurs leçons et à améliorer leur niveau de connaissance,et à les enseignants la possibilité d’ajouter des vidéos et/ou des documents.
+		\paragraph{}
+		Nous utilisons dans la création de virtual academy plateforme de développement Web «WampServer» qui est un environnement comprenant deux serveurs «Apache» et «MySQL» et un interpréteur de «script PHP», ainsi que «phpMyAdmin» pour l'administration Web des «bases de donnée MySQL».\\
+		\\
+		\\
+		\\
+		\paragraph{mot clée:}
+		Site Web Dynamique, PHP, MySql, Apache, WampServer.
+	\end{abstract}
+	\input{remerciements.tex}
+	\input{Dedication.tex}
+	\input{Table_of_contents.tex}
+	\input{Lists_of_tables_and_figures.tex}
+	\input{Introduction.tex}
+	\input{Chapiter1.tex}
+	\input{Chapiter2.tex}
+	\input{Chapiter3.tex}
+	\input{Chapiter4.tex}
+\end{document}
